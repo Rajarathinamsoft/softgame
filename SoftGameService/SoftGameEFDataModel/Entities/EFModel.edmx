@@ -1,0 +1,189 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="SoftcrylicModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Softcrylic.dbo.ActiveUsers' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="ActiveUsers">
+          <Key>
+            <PropertyRef Name="ActiveUserId" />
+            <PropertyRef Name="ActiveUserName" />
+          </Key>
+          <Property Name="ActiveUserId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ActiveUserName" Type="varchar" MaxLength="15" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Softcrylic.dbo.ActiveUsers1' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="ActiveUsers1">
+          <Key>
+            <PropertyRef Name="ActiveUserId" />
+            <PropertyRef Name="ActiveUserName" />
+          </Key>
+          <Property Name="ActiveUserId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ActiveUserName" Type="varchar" MaxLength="15" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Softcrylic.dbo.GamesInfo' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="GamesInfo">
+          <Key>
+            <PropertyRef Name="GameId" />
+            <PropertyRef Name="GameName" />
+          </Key>
+          <Property Name="GameId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="GameName" Type="varchar" MaxLength="15" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Softcrylic.dbo.Users' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="UserName" />
+            <PropertyRef Name="Pwd" />
+            <PropertyRef Name="userRole" />
+          </Key>
+          <Property Name="UserId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserName" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="Pwd" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="userRole" Type="varchar" MaxLength="25" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="SoftcrylicModelStoreContainer">
+          <EntitySet Name="ActiveUsers" EntityType="Self.ActiveUsers" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [ActiveUsers].[ActiveUserId] AS [ActiveUserId], 
+    [ActiveUsers].[ActiveUserName] AS [ActiveUserName]
+    FROM [dbo].[ActiveUsers] AS [ActiveUsers]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="ActiveUsers1" EntityType="Self.ActiveUsers1" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [ActiveUsers1].[ActiveUserId] AS [ActiveUserId], 
+    [ActiveUsers1].[ActiveUserName] AS [ActiveUserName]
+    FROM [dbo].[ActiveUsers1] AS [ActiveUsers1]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="GamesInfo" EntityType="Self.GamesInfo" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [GamesInfo].[GameId] AS [GameId], 
+    [GamesInfo].[GameName] AS [GameName]
+    FROM [dbo].[GamesInfo] AS [GamesInfo]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Users" EntityType="Self.Users" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Users].[UserId] AS [UserId], 
+    [Users].[UserName] AS [UserName], 
+    [Users].[Pwd] AS [Pwd], 
+    [Users].[userRole] AS [userRole]
+    FROM [dbo].[Users] AS [Users]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SoftcrylicModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="UserName" />
+            <PropertyRef Name="Pwd" />
+            <PropertyRef Name="userRole" />
+          </Key>
+          <Property Name="UserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Pwd" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="userRole" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="SoftcrylicEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Users" EntityType="Self.User" />
+          <EntitySet Name="GamesInfoes" EntityType="SoftcrylicModel.GamesInfo" />
+          <EntitySet Name="ActiveUsers" EntityType="SoftcrylicModel.ActiveUser" />
+          <EntitySet Name="ActiveUsers1" EntityType="SoftcrylicModel.ActiveUsers1" />
+        </EntityContainer>
+        <EntityType Name="GamesInfo">
+          <Key>
+            <PropertyRef Name="GameId" />
+            <PropertyRef Name="GameName" />
+          </Key>
+          <Property Name="GameId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="GameName" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="ActiveUser">
+          <Key>
+            <PropertyRef Name="ActiveUserId" />
+            <PropertyRef Name="ActiveUserName" />
+          </Key>
+          <Property Name="ActiveUserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ActiveUserName" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="ActiveUsers1">
+          <Key>
+            <PropertyRef Name="ActiveUserId" />
+            <PropertyRef Name="ActiveUserName" />
+          </Key>
+          <Property Name="ActiveUserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ActiveUserName" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SoftcrylicModelStoreContainer" CdmEntityContainer="SoftcrylicEntities">
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="SoftcrylicModel.User">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Pwd" ColumnName="Pwd" />
+                <ScalarProperty Name="userRole" ColumnName="userRole" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GamesInfoes">
+            <EntityTypeMapping TypeName="SoftcrylicModel.GamesInfo">
+              <MappingFragment StoreEntitySet="GamesInfo">
+                <ScalarProperty Name="GameName" ColumnName="GameName" />
+                <ScalarProperty Name="GameId" ColumnName="GameId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ActiveUsers">
+            <EntityTypeMapping TypeName="SoftcrylicModel.ActiveUser">
+              <MappingFragment StoreEntitySet="ActiveUsers">
+                <ScalarProperty Name="ActiveUserName" ColumnName="ActiveUserName" />
+                <ScalarProperty Name="ActiveUserId" ColumnName="ActiveUserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ActiveUsers1">
+            <EntityTypeMapping TypeName="SoftcrylicModel.ActiveUsers1">
+              <MappingFragment StoreEntitySet="ActiveUsers1">
+                <ScalarProperty Name="ActiveUserName" ColumnName="ActiveUserName" />
+                <ScalarProperty Name="ActiveUserId" ColumnName="ActiveUserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

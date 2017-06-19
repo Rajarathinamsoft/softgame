@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SoftcrylicModelStoreContainer" CdmEntityContainer="SoftcrylicEntities">
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="SoftcrylicModel.User">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Pwd" ColumnName="Pwd" />
+          <ScalarProperty Name="userRole" ColumnName="userRole" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GamesInfoes">
+      <EntityTypeMapping TypeName="SoftcrylicModel.GamesInfo">
+        <MappingFragment StoreEntitySet="GamesInfo">
+          <ScalarProperty Name="GameName" ColumnName="GameName" />
+          <ScalarProperty Name="GameId" ColumnName="GameId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ActiveUsers">
+      <EntityTypeMapping TypeName="SoftcrylicModel.ActiveUser">
+        <MappingFragment StoreEntitySet="ActiveUsers">
+          <ScalarProperty Name="ActiveUserName" ColumnName="ActiveUserName" />
+          <ScalarProperty Name="ActiveUserId" ColumnName="ActiveUserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ActiveUsers1">
+      <EntityTypeMapping TypeName="SoftcrylicModel.ActiveUsers1">
+        <MappingFragment StoreEntitySet="ActiveUsers1">
+          <ScalarProperty Name="ActiveUserName" ColumnName="ActiveUserName" />
+          <ScalarProperty Name="ActiveUserId" ColumnName="ActiveUserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

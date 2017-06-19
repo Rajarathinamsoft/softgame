@@ -1,0 +1,10 @@
+C:\Softgame\SoftGameService\SoftGameEFDataModel\bin\Debug\SoftGameEFDataModel.dll.config
+C:\Softgame\SoftGameService\SoftGameEFDataModel\bin\Debug\SoftGameEFDataModel.dll
+C:\Softgame\SoftGameService\SoftGameEFDataModel\bin\Debug\SoftGameEFDataModel.pdb
+C:\Softgame\SoftGameService\SoftGameEFDataModel\bin\Debug\EntityFramework.dll
+C:\Softgame\SoftGameService\SoftGameEFDataModel\bin\Debug\EntityFramework.SqlServer.dll
+C:\Softgame\SoftGameService\SoftGameEFDataModel\bin\Debug\EntityFramework.xml
+C:\Softgame\SoftGameService\SoftGameEFDataModel\bin\Debug\EntityFramework.SqlServer.xml
+C:\Softgame\SoftGameService\SoftGameEFDataModel\obj\Debug\SoftGameEFDataModel.csprojResolveAssemblyReference.cache
+C:\Softgame\SoftGameService\SoftGameEFDataModel\obj\Debug\SoftGameEFDataModel.dll
+C:\Softgame\SoftGameService\SoftGameEFDataModel\obj\Debug\SoftGameEFDataModel.pdb

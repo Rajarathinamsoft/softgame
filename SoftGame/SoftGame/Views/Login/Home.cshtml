@@ -1,0 +1,74 @@
+﻿@model IEnumerable<SoftGame.Models.ListofGamesModel>
+
+@{
+    ViewBag.Title = "Home";
+    WebGrid grid = new WebGrid(Model);
+}
+<html>
+<head>
+
+</head>
+<body>
+    <style>
+        table, td, th {
+            border: 1px solid green;
+            border-collapse: collapse;
+        }
+
+        th {
+            border: 1px solid black;
+            background-color: black;
+            color: white;
+        }
+    </style>
+    @if (Request.IsAuthenticated)
+    {
+        using (Html.BeginForm("LogOff", "Login", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+        {
+            @Html.AntiForgeryToken()
+
+            <ul class="nav navbar-nav navbar-right">
+              
+                <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
+            </ul>
+        }
+    }
+    else
+    {
+        <ul class="nav navbar-nav navbar-right">
+            <li>@Html.ActionLink("Log Off", "LogIn", "Login", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+        </ul>
+    }
+
+    <div class="row">
+        <section class="lp-banner-wrapper">
+            <div class="this-content">
+                <h2>Join the gaming <span class="orange">revolution</span></h2>
+                <p class="create-text">Create your own gaming space with all the games, news and reviews that matter to you</p>
+            </div>
+        </section>
+    </div>
+
+
+    <div class="row">
+        <div class="col-md-8">
+            <section id="Game">
+                <div>
+                    @grid.GetHtml(columns: new[]
+
+{
+    grid.Column("GameId", "Game ID"),
+    grid.Column("GameName", "Game Name")
+
+}
+)
+                </div>
+            </section>
+        </div>
+
+    </div>
+</body>
+</html>
+
+
+
